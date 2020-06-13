@@ -1,0 +1,13 @@
+function count(string) {
+
+    let object = {};
+    let sortedString = string.split('').sort().join('');
+    let uniqueLetters = [...new Set(string.split(''))];
+    
+    uniqueLetters.forEach(letter => {
+        let regExp = new RegExp(`(${letter})+`);
+        return object[letter] = sortedString.match(regExp)[0].length;
+    }
+    )
+    return object;
+}
